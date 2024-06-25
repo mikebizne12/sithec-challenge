@@ -1,0 +1,92 @@
+<form [formGroup]="form" (ngSubmit)="onSearch()" class="grid">
+  <div class="col-12 md:col-12 md:col-3">
+    <span class="p-float-label">
+      <input pInputText id="name" formControlName="name" class="w-full" />
+      <label htmlFor="name">Name</label>
+    </span>
+  </div>
+  <div
+    class="col-12 md:col-3"
+    [hidden]="filter == LOCATION || filter == EPISODE"
+  >
+    <p-dropdown
+      [options]="status"
+      optionLabel="name"
+      optionValue="id"
+      [style]="{ width: '100%' }"
+      formControlName="status"
+      placeholder="Status"
+    />
+  </div>
+  <div
+    class="col-12 md:col-3"
+    [hidden]="filter == LOCATION || filter == EPISODE"
+  >
+    <span class="p-float-label">
+      <input pInputText id="species" formControlName="species" class="w-full" />
+      <label htmlFor="species">Species</label>
+    </span>
+  </div>
+
+  <div class="col-12 md:col-3" [hidden]="filter == EPISODE">
+    <span class="p-float-label">
+      <input pInputText id="type" formControlName="type" class="w-full" />
+      <label htmlFor="type">Type</label>
+    </span>
+  </div>
+  <div
+    class="col-12 md:col-3"
+    [hidden]="filter == CHARACTER || filter == EPISODE"
+  >
+    <span class="p-float-label">
+      <input
+        pInputText
+        id="dimension"
+        formControlName="dimension"
+        class="w-full"
+      />
+      <label htmlFor="dimension">Dimension</label>
+    </span>
+  </div>
+  <div
+    class="col-12 md:col-3"
+    [hidden]="filter == CHARACTER || filter == LOCATION"
+  >
+    <span class="p-float-label">
+      <input pInputText id="episode" formControlName="episode" class="w-full" />
+      <label htmlFor="episode">Episode</label>
+    </span>
+  </div>
+  <div
+    class="col-12 md:col-3"
+    [hidden]="filter == LOCATION || filter == EPISODE"
+  >
+    <p-dropdown
+      [options]="gender"
+      optionLabel="name"
+      [style]="{ width: '100%' }"
+      optionValue="id"
+      formControlName="gender"
+      placeholder="Gender"
+    />
+  </div>
+  <div class="col-6 md:col-3">
+    <p-button
+      type="submit"
+      icon="pi pi-search"
+      label="Search"
+      [style]="{ width: '100%' }"
+      [disabled]="form.invalid"
+    ></p-button>
+  </div>
+  <div class="col-6 md:col-3">
+    <p-button
+      type="submit"
+      icon="pi pi-eraser"
+      severity="secondary"
+      label="Clear"
+      [style]="{ width: '100%' }"
+      (onClick)="resetForm()"
+    ></p-button>
+  </div>
+</form>

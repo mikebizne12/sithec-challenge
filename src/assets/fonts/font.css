@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'GetSchwifty-Regular';
+  src:
+    url('GetSchwifty-Regular.svg#GetSchwifty-Regular') format('svg'),
+    url('GetSchwifty-Regular.ttf') format('truetype'),
+    url('GetSchwifty-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'get_schwifty';
+  src: url('get_schwifty.eot');
+  src:
+    url('get_schwifty.eot?#iefix') format('embedded-opentype'),
+    url('get_schwifty.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}

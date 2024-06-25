@@ -1,0 +1,18 @@
+.card {
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 18px !important;
+}
+
+.card-footer {
+  border-radius: 0 0 18px 18px !important;
+}
+
+.card-title {
+  font-size: 16px;
+  color: $dark;
+}
+
+.card-text {
+  font-size: 12px;
+  color: $gray;
+}

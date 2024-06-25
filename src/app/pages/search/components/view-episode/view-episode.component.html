@@ -1,0 +1,20 @@
+<div class="grid fadein animation-duration-1000">
+  <div *ngFor="let item of data.results" class="col-12 md:col-4 lg:col-3">
+    <p-card
+      header="{{ item.name | truncate : 16 }}"
+      [style]="{ width: 'auto' }"
+    >
+      <p>
+        <i class="pi pi-globe"></i>
+        {{ item.episode }} - {{ item.air_date | date }}
+      </p>
+      <ng-template pTemplate="footer" class="text-center">
+        <p-button
+          label=" View characters"
+          icon="pi pi-eye"
+          (onClick)="viewCharacters(item)"
+        ></p-button>
+      </ng-template>
+    </p-card>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div *ngIf="!(character$ | async)">
+  <div class="text-center col-12">
+    <p-progressSpinner></p-progressSpinner>
+  </div>
+</div>
+
+<div
+  *ngIf="character$ | async as item"
+  class="grid fadein animation-duration-1000"
+>
+  <div class="col-12 md:col-offset-1 md:col-4 ">
+    <img
+      alt="Card"
+      class="w-full md:w-full"
+      [defaultImage]="'assets/imgs/no-image.png'"
+      [lazyLoad]="item.image"
+    />
+  </div>
+
+  <div class="col-12 md:col-6">
+    <p-card header="{{ item.name }}">
+      <ng-template pTemplate="header"> </ng-template>
+      <p-chip label="{{ item.status }} - {{ item.species }}"></p-chip>
+      <p>
+        <i class="pi pi-angle-right"></i>
+        {{ item.location.name }}
+      </p>
+      <p *ngIf="item.type">
+        <i class="pi pi-angle-right"></i>
+        {{ item.type }}
+      </p>
+      <p>
+        <i class="pi pi-angle-right"></i>
+        {{ item.gender }}
+      </p>
+      <p>
+        <i class="pi pi-angle-right"></i>
+        {{ item.origin.name }}
+      </p>
+      <p *ngIf="item.episode_detail">
+        <i class="pi pi-bookmark"></i>
+        {{ item.episode_detail.episode }} | {{ item.episode_detail.name }} |
+        {{ item.episode_detail.air_date | date }}
+      </p>
+      <ng-template pTemplate="footer">
+        <p-button
+          label="Back"
+          icon="pi pi-arrow-left"
+          (onClick)="goBack()"
+        ></p-button>
+      </ng-template>
+    </p-card>
+  </div>
+</div>

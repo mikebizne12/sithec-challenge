@@ -1,0 +1,27 @@
+<div class="grid fadein animation-duration-1000">
+  <div *ngFor="let item of data.results" class="col-12 md:col-4 lg:col-3">
+    <p-card
+      header="{{ item.name | truncate : 17 }}"
+      [style]="{ width: 'auto' }"
+    >
+      <p>
+        <i class="pi pi-globe"></i>
+        {{ item.type }}
+      </p>
+
+      <p>
+        <i class="pi pi-reddit"></i>
+        {{ item.dimension }}
+      </p>
+
+      <p>
+        <i class="pi pi-user"></i>
+        {{ getTotal(item.residents || []) }}
+      </p>
+      <p>
+        <i class="pi pi-calendar"></i>
+        {{ item.created | date }}
+      </p>
+    </p-card>
+  </div>
+</div>

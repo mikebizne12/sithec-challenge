@@ -1,0 +1,97 @@
+.btn {
+  //font-family: Poppins-Regular;
+  font-size: 16px !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+
+  //padding-left: 1.5rem ;
+  //padding-right: 1.5rem;
+}
+
+.btn-primary {
+  background-color: $primary !important;
+  border-color: $primary !important;
+}
+
+.btn-primary:hover {
+  background-color: $primary-light !important;
+}
+
+.btn-primary.focus,
+.btn-primary:focus,
+.btn-outline-primary.focus,
+.btn-outline-primary:focus {
+  box-shadow: 0 0 0 0.2rem $primary-light !important;
+}
+
+.btn-outline-primary {
+  color: $primary !important;
+  border-color: $primary !important;
+}
+
+.btn-outline-primary:hover {
+  color: $white !important;
+  border-color: $primary !important;
+  background-color: $primary !important;
+}
+
+.btn-outline-primary.only-text {
+  color: $primary !important;
+  border-color: transparent !important;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled).active,
+.btn-outline-primary:not(:disabled):not(.disabled):active {
+  background-color: $primary !important;
+  color: $white !important;
+}
+
+.btn-outline-primary.only-text:hover {
+  //color: $white !important;
+  border-color: transparent !important;
+  background-color: transparent !important;
+}
+
+.btn-secondary {
+  background-color: $secondary !important;
+  border-color: $secondary !important;
+}
+
+.btn-secondary:hover {
+  background-color: $secondary-light !important;
+}
+
+.btn-secondary.focus,
+.btn-secondary:focus,
+.btn-outline-secondary.focus,
+.btn-outline-secondary:focus {
+  box-shadow: 0 0 0 0.2rem $secondary-light !important;
+}
+
+.btn-outline-secondary {
+  color: $secondary !important;
+  border-color: $secondary !important;
+}
+
+.btn-outline-secondary:hover {
+  color: $white !important;
+  border-color: $secondary !important;
+  background-color: $secondary !important;
+}
+
+.btn-outline-secondary.only-text {
+  color: $secondary !important;
+  border-color: transparent !important;
+}
+
+.btn-outline-secondary.only-text:hover {
+  //color: $white !important;
+  border-color: transparent !important;
+  background-color: transparent !important;
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled).active,
+.btn-outline-secondary:not(:disabled):not(.disabled):active {
+  background-color: $secondary !important;
+  color: $white !important;
+}

@@ -1,0 +1,49 @@
+|<p-button
+  type="submit"
+  label="Compare selected"
+  icon="pi pi-arrow-right-arrow-left"
+  id="button-compare"
+  (onClick)="viewCompared()"
+  [disabled]="getIds().length == 1 || getIds().length === 0"
+></p-button>
+<p-toast position="bottom-center"></p-toast>
+<div class="grid fadein animation-duration-1000">
+  <div *ngFor="let item of data.results" class="col-12 md:col-4 lg:col-3">
+    <p-card header="{{ item.name | truncate: 17 }}" [style]="{ width: 'auto' }">
+      <ng-template pTemplate="header">
+        <img
+          alt="Card"
+          [defaultImage]="'assets/imgs/no-image.png'"
+          [lazyLoad]="item.image"
+        />
+      </ng-template>
+
+      <p-chip label="{{ item.status }} - {{ item.species }}"></p-chip>
+      <p>
+        <i class="pi pi-globe"></i>
+        {{ item.location!.name | truncate: 20 }}
+      </p>
+      <p *ngIf="item.episode_detail">
+        <i class="pi pi-bookmark"></i>
+        {{ item.episode_detail.episode }} |
+        {{ item.episode_detail.air_date | date }}
+      </p>
+      <ng-template pTemplate="footer">
+        <p-button
+          label="View"
+          icon="pi pi-eye"
+          (onClick)="selectCharacter(item)"
+        ></p-button>
+        <p-button
+          label="Compare"
+          [icon]="'pi ' + (item.compared ? 'pi-check' : '')"
+          class="ml-2"
+          (onClick)="validCheck(item)"
+          iconPos="right"
+          styleClass="p-button-secondary"
+          [disabled]="item.disabled || false"
+        ></p-button>
+      </ng-template>
+    </p-card>
+  </div>
+</div>

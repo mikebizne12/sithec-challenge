@@ -1,0 +1,19 @@
+<div class="grid">
+  <div class="text-center col-12" *ngIf="loading">
+    <p-progressSpinner></p-progressSpinner>
+  </div>
+  <div class="col-4" *ngFor="let item of data; let i = index">
+    <p-card
+      header="{{ item.name | truncate : 17 }}"
+      [style]="{ width: 'auto' }"
+    >
+      <ng-template pTemplate="header">
+        <img
+          alt="Card"
+          [defaultImage]="'assets/imgs/no-image.png'"
+          [lazyLoad]="item.image"
+        />
+      </ng-template>
+    </p-card>
+  </div>
+</div>

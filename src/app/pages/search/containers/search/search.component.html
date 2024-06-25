@@ -1,0 +1,49 @@
+<div class="grid">
+  <div class="col-12 text-center">
+    <p-selectButton
+      [options]="filters"
+      [(ngModel)]="value"
+      (onOptionClick)="onFilter()"
+      optionLabel="name"
+      optionValue="value"
+    ></p-selectButton>
+  </div>
+  <div class="col-12">
+    <app-search-field
+      [form]="formSearch"
+      [filter]="value"
+      (eventClic)="onSearch()"
+    ></app-search-field>
+  </div>
+  <div class="text-center col-12" *ngIf="loading">
+    <p-progressSpinner></p-progressSpinner>
+  </div>
+  <div class="col-12">
+    <h4 *ngIf="notFound" class="text-center">
+      <strong>
+        <span *ngIf="value == CHARACTER">The character</span>
+        <span *ngIf="value == LOCATION">The location</span>
+        <span *ngIf="value == EPISODE">The episode</span>
+      </strong>
+      you are looking for doesn't exist.
+    </h4>
+    <app-view-character
+      [data]="data"
+      *ngIf="value == CHARACTER"
+    ></app-view-character>
+    <app-view-location
+      [data]="data"
+      *ngIf="value == LOCATION"
+    ></app-view-location>
+    <app-view-episode [data]="data" *ngIf="value == EPISODE"></app-view-episode>
+
+    <div class="my-5" *ngIf="data.results.length > 0">
+      <p-paginator
+        (onPageChange)="setPage($event)"
+        [first]="data.info.current_page"
+        [rows]="20"
+        [totalRecords]="data.info.count"
+      ></p-paginator>
+    </div>
+  </div>
+</div>
