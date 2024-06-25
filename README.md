@@ -1,8 +1,7 @@
-# Baufest: Challenge Angular
+# Challenge Angular
 ## Consideraciones Técnicas
 Queda a criterio del evaluado:
-- La elección del framework CSS a utilizar (boostrap, material, etc)
-- La elección de un componente de terceros para renderizado de tablas
+- La elección del framework CSS a utilizar (boostrap, material, etc) 
 - La elección de una biblioteca http para comunicación con APIs
 
 ## **Enunciado**
