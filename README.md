@@ -1,11 +1,8 @@
 # Challenge Angular
-## Consideraciones Técnicas
-Queda a criterio del evaluado:
-- La elección del framework CSS a utilizar (boostrap, material, etc) 
-- La elección de una biblioteca http para comunicación con APIs
+## Detalles Técnicos 
 
 ## **Enunciado**
-Haciendo uso de la [API Pública](https://rickandmortyapi.com/) de Rick & Morty, resolver:
+Haciendo uso de la [API Pública](https://rickandmortyapi.com/) de Rick & Morty, se implementó:
 
 ## Barra de búsqueda
 Desarrollar una barra de búsqueda que permita realizar consultas por episodios, ubicaciones o personajes. La visualización de resultados debera realizarse por medio de cards
