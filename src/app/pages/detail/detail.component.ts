@@ -5,11 +5,11 @@ import { Observable } from 'rxjs';
 import { ICharacter } from 'src/app/shared/interfaces/character';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  selector: 'app-detail',
+  templateUrl: './detail.component.html',
+  styleUrls: ['./detail.component.scss'],
 })
-export class HomeComponent {
+export class DetailComponent {
   character$: Observable<ICharacter>;
 
   constructor(

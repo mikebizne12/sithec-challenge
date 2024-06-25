@@ -1,33 +1,46 @@
-# Challenge Angular
-## Detalles Técnicos 
+## Quick Start 
 
-## **Enunciado**
-Haciendo uso de la [API Pública](https://rickandmortyapi.com/) de Rick & Morty, se implementó:
+- Node.js (v20.15.0 recommended)
+- npm (v10.7 recommended)
+- [Angular CLI](https://github.com/angular/angular-cli) (v16.2.12 recomendada)
 
-## Barra de búsqueda
-Desarrollo de una barra de búsqueda que permita realizar consultas por episodios, ubicaciones o personajes. La visualización de resultados se realizó por medio de cards
+```bash
+git clone git@github.com:mikebizne12/sithec-challenge.git
+cd sithec-challenge
+npm install
+ng serve
+```
 
-### Búsqueda por Personaje
+## Development server
 
-### Búsqueda por Ubicación
-Mostrar:
-- Nombre
-- Tipo
-- Dimensión
-- Cantidad de residentes
-- Fecha de creación
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-### Búsqueda por Episodios
-Mostrar:
-- Nombre
-- Fecha de emisión
-- Código de episodio
+## Code scaffolding
 
-## Comparativa de personajes
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-### Consideraciones
-- El máximo de comparaciones es de 3 personajes por búsqueda
+## MVCC
 
-## Detalle de episodios
+Containers and Components are both Angular Components, but used in different ways.
+
+Containers should arrange Components.
+
+Obviously this can become subjective, but MVCC is the paradigm that we subscribe to.
 
 
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Addons
+
+Run `npm run lint` to scan the code.
+
+Run `npm run format` to check the format code via prettier.
+
+Run `npm run format:write` to write the format code via prettier.
+
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './home.component';
+import { DetailComponent } from './detail.component';
 import { RouterModule, Routes } from '@angular/router';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
@@ -11,12 +11,12 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: DetailComponent,
   },
 ];
 
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [DetailComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -27,4 +27,4 @@ const routes: Routes = [
     ProgressSpinnerModule,
   ],
 })
-export class HomeModule {}
+export class DetailModule {}
