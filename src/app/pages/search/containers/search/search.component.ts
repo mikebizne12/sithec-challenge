@@ -25,6 +25,7 @@ export class SearchComponent implements OnInit {
   notFound = false;
   open = false;
   loading = false;
+  loadingSearch = false;
   results: Array<ICharacter> = [];
   info: IInfo = { count: 0, pages: 0, current_page: 1 };
   data: IConfig = { info: this.info, results: this.results };
@@ -53,17 +54,16 @@ export class SearchComponent implements OnInit {
   onFilter() {
     this.formSearch.controls['selector'].setValue(this.value);
     this.createForm();
-
-    this.setPage({ page: 1 });
+    this.setPage({ page: 0 });
   }
 
   onSearch() {
-    this.setPage({ page: 1 });
+    this.setPage({ page: 0 });
   }
 
   setPage(page: any) {
-    this.formSearch.controls['page'].setValue(page.page);
-    this.info.current_page = page.page;
+    this.formSearch.controls['page'].setValue(page.page + 1);
+    this.data.info.current_page = page.page;
     this.getList();
     this.scrollToTop();
   }

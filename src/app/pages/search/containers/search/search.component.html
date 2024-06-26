@@ -15,7 +15,7 @@
       (eventClic)="onSearch()"
     ></app-search-field>
   </div>
-  <div class="text-center col-12" *ngIf="loading">
+  <div class="text-center col-12" *ngIf="loading && !notFound">
     <p-progressSpinner></p-progressSpinner>
   </div>
   <div class="col-12">
@@ -37,13 +37,11 @@
     ></app-view-location>
     <app-view-episode [data]="data" *ngIf="value == EPISODE"></app-view-episode>
 
-    <div class="my-5" *ngIf="data.results.length > 0">
-      <p-paginator
-        (onPageChange)="setPage($event)"
-        [first]="data.info.current_page"
-        [rows]="20"
-        [totalRecords]="data.info.count"
-      ></p-paginator>
-    </div>
+    <p-paginator
+      (onPageChange)="setPage($event)"
+      [first]="data.info.current_page"
+      [rows]="20"
+      [totalRecords]="data.info.count"
+    ></p-paginator>
   </div>
 </div>
